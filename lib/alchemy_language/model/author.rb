@@ -1,4 +1,4 @@
 module AlchemyLanguage
-  class UrlService
+  class Author
   end
 end
