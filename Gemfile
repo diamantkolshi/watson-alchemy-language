@@ -10,6 +10,7 @@ group :development do
   gem 'guard-rspec'
   gem 'pry'
 	gem 'dotenv-rails'
+  gem 'rest-client'
 
   # Adds debugging steps to Pry
   # continue, step, next

@@ -7,7 +7,7 @@ module AlchemyLanguage
       is_url?
       @path = path
     end
-    
+
     def is_url?
       return "params is not url" if check_url.nil?
     end

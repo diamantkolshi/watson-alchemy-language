@@ -9,8 +9,8 @@ module AlchemyLanguage
       end
 
       def base_url
-       	"#{AlchemyLanguage.base_url_request}"
-      end      
+        "#{AlchemyLanguage.base_url_request}"
+      end
     end
   end
 end

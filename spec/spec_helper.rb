@@ -5,9 +5,10 @@ def get_file(path)
   path.split("/").last
 end
 
-require 'pry' if ENV['APP_ENV'] == 'debug' # add `binding.pry` wherever you need to debug
+require 'pry'
 require 'alchemy_language'
-require "alchemy_language/author.rb"
+require_relative '../lib/alchemy_language/model/author'
+
 
 # Dir.glob(File.join("../lib", "**", "*.rb")) do |klass|
 # 	require "alchemy_language/author.rb"
