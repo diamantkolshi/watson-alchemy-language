@@ -3,7 +3,7 @@ module AlchemyLanguage
     module Methods
       def self.define_component(name)
         define_method(name) do
-          eval("#{name.capitalize}").new(@path)
+          eval("#{name.capitalize}").new(@path, @type)
         end
       end
 

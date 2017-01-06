@@ -13,6 +13,5 @@ module AlchemyLanguage
     "secret_token"
   end
 end
-
 # obj = AlchemyLanguage::UrlService.new("www.ibm.com")
 # obj.author

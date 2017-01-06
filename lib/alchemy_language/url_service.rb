@@ -1,11 +1,12 @@
 module AlchemyLanguage
   class UrlService
     include Generators::Methods
-    attr_accessor :path
+    attr_accessor :path, :type
 
     def initialize(path)
       is_url?
       @path = path
+      @type = "url"
     end
 
     def is_url?

@@ -2,7 +2,7 @@ require 'spec_helper'
 require_relative '../../lib/alchemy_language/generator/request_api'
 
 describe AlchemyLanguage::Author do
-  let(:author) {  AlchemyLanguage::Author.new("/path") }
+  let(:author) {  AlchemyLanguage::Author.new("/path", "url") }
 
   describe "initialize" do
     it "path instance variable" do
