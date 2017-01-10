@@ -1,5 +1,5 @@
 require 'spec_helper'
-require_relative '../../lib/alchemy_language/generator/methods'
+require_relative '../../lib/alchemy_language/active_method/base'
 require_relative '../../lib/alchemy_language/url_service'
 
 describe AlchemyLanguage::UrlService do

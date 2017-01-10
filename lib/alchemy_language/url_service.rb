@@ -11,7 +11,7 @@ module AlchemyLanguage
     end
 
     def is_url?
-      return "params is not url" if check_url.nil?
+      "params is not url" if check_url.nil?
     end
 
     def check_url

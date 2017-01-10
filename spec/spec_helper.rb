@@ -7,8 +7,6 @@ end
 
 require 'pry'
 require 'alchemy_language'
-require_relative '../lib/alchemy_language/model/author'
-
 
 # Dir.glob(File.join("../lib", "**", "*.rb")) do |klass|
 # 	require "alchemy_language/author.rb"

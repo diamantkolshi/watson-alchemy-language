@@ -5,17 +5,15 @@ require 'uri'
 require 'rest-client'
 
 module AlchemyLanguage
-
 	class << self
 	  def base_url_request
 	    "https://gateway-a.watsonplatform.net/calls"
 	  end
 
 	  def secret_token
-	    "secret_token"
+	    "secret-token"
 	  end
-	end
-	
+	end	
 end
 # obj = AlchemyLanguage::UrlService.new("www.ibm.com")
-# obj.author
+# obj.author.status

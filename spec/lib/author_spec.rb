@@ -1,5 +1,6 @@
 require 'spec_helper'
 require_relative '../../lib/alchemy_language/generator/request_api'
+require_relative '../../lib/alchemy_language/model/author'
 
 describe AlchemyLanguage::Author do
   let(:author) {  AlchemyLanguage::Author.new("/path", "url") }

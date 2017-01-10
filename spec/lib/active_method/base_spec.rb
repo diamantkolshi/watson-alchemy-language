@@ -18,5 +18,8 @@ describe AlchemyLanguage::ActiveMethod::Base do
 
       is_expected.to respond_to(:test_method)
     end
+
+    it "involved class whitch named with name params" do 
+    end
   end
 end
