@@ -1,7 +1,8 @@
 module AlchemyLanguage
-  class UrlService
-    include Generators::Methods
+  class UrlService < ActiveMethod::Base
     attr_accessor :path, :type
+
+    define_component :author
 
     def initialize(path)
       is_url?
