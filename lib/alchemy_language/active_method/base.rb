@@ -8,11 +8,11 @@ module AlchemyLanguage
       end
 
       def self.before_request(name)
-      	Base.send name
+        Base.send name
       end
 
       def self.authenticate!
-				"method authenticate"
+        "method authenticate"
       end
     end
   end

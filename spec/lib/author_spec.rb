@@ -15,7 +15,7 @@ describe AlchemyLanguage::Author do
     end
   end
 
-  describe "#extra_path" do
+  describe "#end_point" do
     let(:complete_path) { "url/URLGetAuthors?apikey=#{author.auth_token}&url=#{author.path}" }
     it "get end point with auth_token and path" do
       expect(author.end_point).to eq(complete_path)

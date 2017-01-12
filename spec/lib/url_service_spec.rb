@@ -1,8 +1,15 @@
 require 'spec_helper'
 require_relative '../../lib/alchemy_language/active_method/base'
+require_relative '../../lib/alchemy_language/active_method/extra'
 require_relative '../../lib/alchemy_language/url_service'
+require_relative '../../lib/alchemy_language/generator/alchemy_request'
+require_relative '../../lib/alchemy_language/model/author'
 
 describe AlchemyLanguage::UrlService do
+  let(:base) { AlchemyLanguage::ActiveMethod::Base }
+  let(:extra) { AlchemyLanguage::ActiveMethod::Extra }
+  let(:author) { AlchemyLanguage::Author }
+  subject(:url_service) { AlchemyLanguage::UrlService.new("/path") }
 
   before(:each) do
     @double = double("Post")
@@ -41,8 +48,36 @@ describe AlchemyLanguage::UrlService do
   end
 
   describe "involve method before request" do
-    it "involve authenticate" do
-      
+    before(:each) do
+      allow(base).to receive(:authenticate!).and_return("involve method authenticate")
+    end
+
+    it "involve authenticate and return something" do
+      expect(base.before_request :authenticate!).to eq("involve method authenticate")
+    end
+  end
+
+  describe "define model method inside class" do
+
+    it "initially does not exist model method" do
+      is_expected.not_to respond_to(:model_method)
+    end
+
+    it "create a new dinamic method with name model" do
+      base.define_model :model_method
+
+      expect(url_service).to respond_to(:model_method)
+    end
+
+    describe "initialize and involve specific class" do
+      before(:each) do
+        extra.add_method(:call) { "OK" }
+        base.define_model :author
+      end
+
+      it "return method of author" do
+        expect(url_service.author.call).to eq("OK")
+      end
     end
   end
 end
