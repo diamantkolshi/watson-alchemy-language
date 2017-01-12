@@ -39,4 +39,10 @@ describe AlchemyLanguage::UrlService do
       expect(url_service_failure.check_url).to be_falsey
     end
   end
+
+  describe "involve method before request" do
+    it "involve authenticate" do
+      
+    end
+  end
 end

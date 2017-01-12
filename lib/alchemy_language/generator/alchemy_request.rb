@@ -1,6 +1,6 @@
 module AlchemyLanguage
   module Generators
-    class RequestApi
+    class AlchemyRequest
       attr_accessor :url, :request_path
 
       def initialize(url)

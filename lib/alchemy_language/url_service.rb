@@ -1,7 +1,7 @@
 module AlchemyLanguage
   class UrlService < ActiveMethod::Base
     attr_accessor :path, :type
-    before_action :authenticate!
+    before_request :authenticate!
 
     define_model :author
 

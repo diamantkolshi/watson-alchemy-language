@@ -1,5 +1,5 @@
 require 'spec_helper'
-require_relative '../../lib/alchemy_language/generator/request_api'
+require_relative '../../lib/alchemy_language/generator/alchemy_request'
 require_relative '../../lib/alchemy_language/model/author'
 
 describe AlchemyLanguage::Author do
@@ -17,8 +17,8 @@ describe AlchemyLanguage::Author do
 
   describe "#extra_path" do
     let(:complete_path) { "url/URLGetAuthors?apikey=#{author.auth_token}&url=#{author.path}" }
-    it "get extra path with auth_token and path" do
-      expect(author.extra_path).to eq(complete_path)
+    it "get end point with auth_token and path" do
+      expect(author.end_point).to eq(complete_path)
     end
   end
 end

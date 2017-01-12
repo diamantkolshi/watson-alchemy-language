@@ -7,7 +7,7 @@ module AlchemyLanguage
         end
       end
 
-      def self.before_action(name)
+      def self.before_request(name)
       	Base.send name
       end
 

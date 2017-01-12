@@ -1,8 +1,8 @@
 require 'spec_helper'
-require_relative '../../lib/alchemy_language/generator/request_api'
+require_relative '../../lib/alchemy_language/generator/alchemy_request'
 
-describe AlchemyLanguage::Generators::RequestApi do
-  let(:request_api_intance) { AlchemyLanguage::Generators::RequestApi.new("/path") }
+describe AlchemyLanguage::Generators::AlchemyRequest do
+  let(:request_api_intance) { AlchemyLanguage::Generators::AlchemyRequest.new("/path") }
 
   describe "initialize" do
     it "have url attribute" do

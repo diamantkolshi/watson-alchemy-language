@@ -8,15 +8,15 @@ module AlchemyLanguage
       @path = path
       @auth_token = AlchemyLanguage.secret_token
       @type = type
-      make_request
+      request
     end
 
-    def extra_path
+    def end_point
       "#{@type}/URLGetAuthors?apikey=#{@auth_token}&url=#{@path}"
     end
 
-    def make_request
-      AlchemyLanguage::Generators::RequestApi.new(extra_path)
+    def request
+      AlchemyLanguage::Generators::AlchemyRequest.new(end_point)
     end
   end
 end

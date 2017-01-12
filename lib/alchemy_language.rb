@@ -15,5 +15,5 @@ module AlchemyLanguage
 	  end
 	end	
 end
-obj = AlchemyLanguage::UrlService.new("www.ibm.com")
-puts obj.author.status
+# obj = AlchemyLanguage::UrlService.new("www.ibm.com")
+# puts obj.author.status

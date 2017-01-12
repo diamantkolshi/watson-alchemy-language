@@ -5,7 +5,7 @@ describe AlchemyLanguage::ActiveMethod::Base do
   subject(:base) { AlchemyLanguage::ActiveMethod::Base }
 
   it "has self method that it called define_component" do
-    is_expected.to respond_to(:define_component)
+    is_expected.to respond_to(:define_model)
   end
 
   context "define dynamic methods" do
@@ -14,7 +14,7 @@ describe AlchemyLanguage::ActiveMethod::Base do
     it "define methods dinamix with define component method" do
       is_expected.not_to respond_to(:test_method)
 
-      base.define_component :test_method
+      base.define_model :test_method
 
       is_expected.to respond_to(:test_method)
     end
