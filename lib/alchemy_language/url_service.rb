@@ -1,8 +1,9 @@
 module AlchemyLanguage
   class UrlService < ActiveMethod::Base
     attr_accessor :path, :type
+    before_action :authenticate!
 
-    define_component :author
+    define_model :author
 
     def initialize(path)
       is_url?
