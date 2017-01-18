@@ -2,7 +2,6 @@ Dir.glob(File.join("alchemy_language", "**", "*.rb")).each do |klass|
   require_relative klass
 end
 require 'uri'
-require 'rest-client'
 
 module AlchemyLanguage
 	class << self
@@ -11,10 +10,11 @@ module AlchemyLanguage
 	  end
 
 	  def secret_token
-	    "secret-token"
+	    "secret-tokebn"
 	  end
 	end		
 end
 
 # obj = AlchemyLanguage::UrlService.new("www.ibm.com")
-# puts obj.author.status
+# puts obj.author.number
+

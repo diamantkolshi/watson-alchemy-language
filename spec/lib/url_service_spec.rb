@@ -76,16 +76,5 @@ describe AlchemyLanguage::UrlService do
 
       expect(url_service).to respond_to(:model_method)
     end
-
-    describe "initialize and involve specific class" do
-      before(:each) do
-        extra.add_method(:call) { "OK" }
-        base.define_model :author
-      end
-
-      it "return method of author" do
-        expect(url_service.author.call).to eq("OK")
-      end
-    end
   end
 end
