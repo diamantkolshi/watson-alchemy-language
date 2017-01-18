@@ -13,7 +13,8 @@ module AlchemyLanguage
 	  def secret_token
 	    "secret-token"
 	  end
-	end	
+	end		
 end
+
 # obj = AlchemyLanguage::UrlService.new("www.ibm.com")
 # puts obj.author.status

@@ -1,6 +1,6 @@
 module AlchemyLanguage
   class Author < ActiveMethod::Extra
-    attr_accessor :path, :auth_token
+    attr_accessor :path, :auth_token, :type
 
     add_method(:status) { 200 }
 

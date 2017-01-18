@@ -11,6 +11,14 @@ describe AlchemyLanguage::UrlService do
   let(:author) { AlchemyLanguage::Author }
   subject(:url_service) { AlchemyLanguage::UrlService.new("/path") }
 
+  it "has accessor for path" do
+    is_expected.to respond_to(:path)
+  end
+
+  it "has accessor for type" do
+    is_expected.to respond_to(:type)
+  end
+
   before(:each) do
     @double = double("Post")
   end

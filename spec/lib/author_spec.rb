@@ -1,9 +1,23 @@
 require 'spec_helper'
 require_relative '../../lib/alchemy_language/generator/alchemy_request'
+require_relative '../../lib/alchemy_language/active_method/extra'
 require_relative '../../lib/alchemy_language/model/author'
 
+
 describe AlchemyLanguage::Author do
-  let(:author) {  AlchemyLanguage::Author.new("/path", "url") }
+  subject(:author) {  AlchemyLanguage::Author.new("/path", "url") }
+
+  it "has accessor for path" do
+    is_expected.to respond_to(:path)
+  end
+
+  it "has accessor for auth_token" do
+    is_expected.to respond_to(:auth_token)
+  end
+
+  it "has accessor for type" do
+    is_expected.to respond_to(:type)
+  end
 
   describe "initialize" do
     it "path instance variable" do

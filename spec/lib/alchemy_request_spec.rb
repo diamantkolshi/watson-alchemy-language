@@ -2,7 +2,15 @@ require 'spec_helper'
 require_relative '../../lib/alchemy_language/generator/alchemy_request'
 
 describe AlchemyLanguage::Generators::AlchemyRequest do
-  let(:request_api_intance) { AlchemyLanguage::Generators::AlchemyRequest.new("/path") }
+  subject(:request_api_intance) { AlchemyLanguage::Generators::AlchemyRequest.new("/path") }
+
+  it "has accessor for url" do
+    is_expected.to respond_to(:url)
+  end
+
+  it "has accessor for request_path" do
+    is_expected.to respond_to(:request_path)
+  end
 
   describe "initialize" do
     it "have url attribute" do
