@@ -3,27 +3,18 @@ require 'json'
 
 module AlchemyLanguage
   module Generators
-    class AlchemyRequest
-      attr_accessor :url, :request_path, :api_request, :json_result
-
-      def initialize(url)
-        @url = url
-        @request_path = base_url + "/" + @url
-        @request_path = @url
-        # @api_request = rest_client_api
-      end
-
+    module AlchemyRequest
       def base_url
         "#{AlchemyLanguage.base_url_request}"
       end
 
-      def rest_client_api
-        RestClient.get(@request_path)
-      end
+      # def rest_client_api(request_api)
+      #   RestClient.get(request_api) 
+      # end
 
-      def json_parser
-        @json_result = JSON.parse(@api_request)
-      end 
+      # def json_parser(url)
+      #   JSON.parse(rest_client_api(base_url + "/" + url))
+      # end
     end
   end
 end

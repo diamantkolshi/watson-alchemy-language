@@ -23,3 +23,4 @@ describe AlchemyLanguage::ActiveMethod::Base do
     end
   end
 end
+
