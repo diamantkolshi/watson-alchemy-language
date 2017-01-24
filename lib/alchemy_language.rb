@@ -10,11 +10,10 @@ module AlchemyLanguage
 	  end
 
 	  def secret_token
-	    "secret-tokebn"
+	    "da431323d51965268639e605b3c78169f710b86a"
 	  end
 	end		
 end
 
 # obj = AlchemyLanguage::UrlService.new("www.ibm.com")
-# puts obj.author.number
-
+# puts obj.author

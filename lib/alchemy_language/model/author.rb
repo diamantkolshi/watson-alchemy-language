@@ -1,7 +1,7 @@
 module AlchemyLanguage
   class Author < ActiveMethod::Extra
     include AlchemyLanguage::Generators::AlchemyRequest
-    attr_accessor :path, :auth_token, :type, :json_res
+    attr_accessor :path, :auth_token, :type, :json_result
 
     add_method(:status)
     add_method(:usage)
@@ -12,11 +12,11 @@ module AlchemyLanguage
       @path = path
       @auth_token = AlchemyLanguage.secret_token
       @type = type
-      # @json_res = request
+      @json_result = request
     end
 
     def end_point
-      "#{@type}/URLGetAuthors?apikey=#{@auth_token}&url=#{@path}"
+      "#{@type}/URLGetAuthors?apikey=#{@auth_token}&url=#{@path}&outputMode=json"
     end
 
     def request

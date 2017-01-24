@@ -5,6 +5,8 @@ def get_file(path)
   path.split("/").last
 end
 
+require 'rest-client'
+require 'json'
 require 'pry'
 require 'alchemy_language'
 

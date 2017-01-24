@@ -8,13 +8,13 @@ module AlchemyLanguage
         "#{AlchemyLanguage.base_url_request}"
       end
 
-      # def rest_client_api(request_api)
-      #   RestClient.get(request_api) 
-      # end
+      def rest_client_api(request_api)
+        RestClient.get(request_api)
+      end
 
-      # def json_parser(url)
-      #   JSON.parse(rest_client_api(base_url + "/" + url))
-      # end
+      def json_parser(url)
+        JSON.parse(rest_client_api(base_url + "/" + url))
+      end
     end
   end
 end
