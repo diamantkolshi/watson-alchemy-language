@@ -63,7 +63,6 @@ describe AlchemyLanguage::Author do
     end
 
     it "authors method return hash from json_result['authors']" do 
-      binding.pry
       expect(author.authors).to eq({"names"=>["Author Name 1", "Author Name 2"]})
     end
   end
