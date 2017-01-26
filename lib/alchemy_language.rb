@@ -1,7 +1,6 @@
-Dir.glob(File.join("alchemy_language", "**", "*.rb")).each do |klass|
-  require_relative klass
-end
-require 'uri'
+
+require 'rest-client'
+require 'json'
 
 module AlchemyLanguage
 	class << self
@@ -13,6 +12,10 @@ module AlchemyLanguage
 	    "da431323d51965268639e605b3c78169f710b86a"
 	  end
 	end		
+end
+
+Dir.glob(File.join("alchemy_language", "**", "*.rb")).each do |klass|
+  require_relative klass
 end
 
 # obj = AlchemyLanguage::UrlService.new("www.ibm.com")

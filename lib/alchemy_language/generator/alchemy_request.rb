@@ -1,6 +1,3 @@
-require 'rest-client'
-require 'json'
-
 module AlchemyLanguage
   module Generators
     module AlchemyRequest
