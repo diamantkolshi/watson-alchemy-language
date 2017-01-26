@@ -17,7 +17,7 @@ describe AlchemyLanguage::ActiveMethod::Base do
     is_expected.to respond_to(:define_model)
   end
 
-  describe "define dynamic methods (self mehtods)" do
+  describe "define dynamic methods " do
     subject(:instance_base) { base.new }
 
     it "define methods dinamix with define component method" do
@@ -32,43 +32,60 @@ describe AlchemyLanguage::ActiveMethod::Base do
     end
   end
 
-  describe "instance methods" do
-    let(:instance_base) { base.new }
-
-    describe "#athenticate_successfully" do
-      context "when api key is valid" do
-        before(:example) do
-          allow(instance_base).to receive(:valid_api_key?).and_return(true)
-        end
-
-        it "key is valid" do
-          expect(instance_base.authenticate_successfully?).to eq(true)
-        end
+  describe ".authenticate!" do
+    context "when api key is valid" do
+      before(:each) do
+        allow(base).to receive(:authenticate_successfully?).and_return(true)
       end
-
-      context "when api key is invalid" do
-        before(:example) do
-          allow(instance_base).to receive(:valid_api_key?).and_return(false)
-        end
-
-        it "key is invalid" do
-          expect(instance_base.authenticate_successfully?).to eq(false)
-        end
+      it "authenticate successfully" do
+        expect(base.authenticate!).to eq(nil)
       end
     end
 
-    describe "#valid_api_key?" do
-      context "when api key is valid" do
-        it "key is valid" do
-          allow(instance_base).to receive(:json_parser).and_return(default_api_result)
-          expect(instance_base.valid_api_key?).to eq(true)
-        end
+    context "when api key is not valid" do
+      before(:each) do
+        allow(base).to receive(:authenticate_successfully?).and_return(false)
       end
-      context "when api key is invalid" do
-        it "key is invalid" do
-          allow(instance_base).to receive(:json_parser).and_return(error_api_key)
-          expect(instance_base.valid_api_key?).to eq(false)
-        end
+      it "authenticate failure" do
+        expect(base.authenticate!).to eq("secret key is not valid")
+      end
+    end
+  end
+
+
+  describe ".athenticate_successfully" do
+    context "when api key is valid" do
+      before(:example) do
+        allow(base).to receive(:valid_api_key?).and_return(true)
+      end
+
+      it "key is valid" do
+        expect(base.authenticate_successfully?).to eq(true)
+      end
+    end
+
+    context "when api key is invalid" do
+      before(:example) do
+        allow(base).to receive(:valid_api_key?).and_return(false)
+      end
+
+      it "key is invalid" do
+        expect(base.authenticate_successfully?).to eq(false)
+      end
+    end
+  end
+
+  describe ".valid_api_key?" do
+    context "when api key is valid" do
+      it "key is valid" do
+        allow(base).to receive(:json_parser).and_return(default_api_result)
+        expect(base.valid_api_key?).to eq(true)
+      end
+    end
+    context "when api key is invalid" do
+      it "key is invalid" do
+        allow(base).to receive(:json_parser).and_return(error_api_key)
+        expect(base.valid_api_key?).to eq(false)
       end
     end
   end
