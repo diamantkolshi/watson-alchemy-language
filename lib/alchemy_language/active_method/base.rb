@@ -26,7 +26,7 @@ module AlchemyLanguage
         end
 
         def valid_api_key?
-          !json_parser.key?(:statusInfo)
+          !json_parser.key?("statusInfo")
         end
 
         def json_parser

@@ -15,5 +15,4 @@ group :development do
   # Adds debugging steps to Pry
   # continue, step, next
   gem 'pry-remote'
-  gem 'pry-nav'
 end

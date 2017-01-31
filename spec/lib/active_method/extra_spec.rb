@@ -8,7 +8,7 @@ describe AlchemyLanguage::ActiveMethod::Extra do
     is_expected.to respond_to(:add_method)
   end
 
-  context "define dynamic methods" do
+  describe "define dynamic methods" do
     subject(:instance_extra) { extra.new }
 
     it "define methods dinamix with define component method" do
@@ -17,9 +17,6 @@ describe AlchemyLanguage::ActiveMethod::Extra do
       extra.add_method :test_method
 
       is_expected.to respond_to(:test_method)
-    end
-
-    it "This shows what is inside blocks" do
     end
   end
 end

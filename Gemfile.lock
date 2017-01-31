@@ -73,8 +73,6 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
-    pry-nav (0.2.4)
-      pry (>= 0.9.10, < 0.11.0)
     pry-remote (0.1.8)
       pry (~> 0.9)
       slop (~> 3.0)
@@ -132,11 +130,10 @@ DEPENDENCIES
   guard
   guard-rspec
   pry
-  pry-nav
   pry-remote
   rake
   rest-client
   rspec
 
 BUNDLED WITH
-   1.13.6
+   1.13.7
