@@ -11,6 +11,7 @@ group :development do
   gem 'pry'
 	gem 'dotenv-rails'
   gem 'rest-client'
+  gem 'rubocop', require: false
 
   # Adds debugging steps to Pry
   # continue, step, next
