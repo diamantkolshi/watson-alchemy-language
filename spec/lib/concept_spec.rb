@@ -11,21 +11,7 @@ describe AlchemyLanguage::Concept do
     allow(RestClient).to receive("get").and_return(json_response("concept.json"))
   end
 
-  it "has accessor for path" do
-    is_expected.to respond_to(:path)
-  end
-
-  it "has accessor for auth_token" do
-    is_expected.to respond_to(:auth_token)
-  end
-
-  it "has accessor for type" do
-    is_expected.to respond_to(:type)
-  end
-
-  it "has accessor for json_result" do
-    is_expected.to respond_to(:json_result)
-  end
+  it_should_behave_like "model_accessor"
 
   describe "#add_method" do
     it "concept class has method called status and return result from json_result" do

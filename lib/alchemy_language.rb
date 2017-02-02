@@ -1,4 +1,3 @@
-
 require 'rest-client'
 require 'json'
 
@@ -14,6 +13,13 @@ module AlchemyLanguage
   end
 end
 
-Dir.glob(File.join("alchemy_language", "**", "*.rb")).each do |klass|
-  require_relative klass
-end
+require_relative "alchemy_language/active_method/base.rb"
+require_relative "alchemy_language/active_method/extra.rb"
+require_relative "alchemy_language/generator/alchemy_request.rb"
+require_relative "alchemy_language/active_model/base.rb"
+require_relative "alchemy_language/model/author.rb"
+require_relative "alchemy_language/model/concept.rb"
+require_relative "alchemy_language/url_service.rb"
+
+# obj = AlchemyLanguage::UrlService.new("http://www.ibm.com/watson/")
+# puts obj.author.authors
