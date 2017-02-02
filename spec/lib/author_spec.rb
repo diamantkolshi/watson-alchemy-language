@@ -8,7 +8,7 @@ describe AlchemyLanguage::Author do
   subject(:author) { self_class.new("path", "url") }
 
   before(:each) do
-    allow(RestClient).to receive("get").and_return(author_api_result)
+    allow(RestClient).to receive("get").and_return(json_response("author.json"))
   end
 
   it "has accessor for path" do
@@ -80,7 +80,7 @@ describe AlchemyLanguage::Author do
 
   describe "#result" do
     it "return all result after request with author url" do
-      expect(author.result).to eq(author_api_result)
+      expect(author.result).to eq(json_response("author.json", json_parse: true))
     end
   end
 end

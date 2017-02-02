@@ -78,14 +78,14 @@ describe AlchemyLanguage::ActiveMethod::Base do
   describe ".valid_api_key?" do
     context "when api key is valid" do
       it "key is valid" do
-        allow(base).to receive(:json_parser).and_return(default_api_result)
+        allow(base).to receive(:json_parser).and_return(json_response("default.json", json_parse: true))
 
         expect(base.valid_api_key?).to eq(true)
       end
     end
     context "when api key is invalid" do
       it "key is invalid" do
-        allow(base).to receive(:json_parser).and_return(error_api_key)
+        allow(base).to receive(:json_parser).and_return(json_response("error_api_key.json", json_parse: true ))
         expect(base.valid_api_key?).to eq(false)
       end
     end
