@@ -1,5 +1,10 @@
 RSpec.shared_examples "model_accessor" do
-	it "has accessor for path" do
+
+  it "is inherited with base model" do
+    expect(described_class).to be < AlchemyLanguage::ActiveModel::Base
+  end
+
+  it "has accessor for path" do
     is_expected.to respond_to(:path)
   end
 
