@@ -4,6 +4,7 @@ module AlchemyLanguage
     before_request :authenticate!
 
     define_model :author
+    define_model :concept
 
     def initialize(path)
       is_url?
