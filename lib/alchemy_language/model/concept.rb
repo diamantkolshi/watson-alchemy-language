@@ -1,6 +1,6 @@
 module AlchemyLanguage
   class Concept < ActiveModel::Base
-    add_method(:concepts)
+    add_response_field(:concepts)
 
     def end_point
       "#{@type}/URLGetRankedConcepts?apikey=#{@auth_token}&url=#{@path}&outputMode=json"

@@ -4,6 +4,7 @@ require_relative '../../lib/alchemy_language/active_method/extra'
 require_relative '../../lib/alchemy_language/model/concept'
 
 describe AlchemyLanguage::Concept do
+  include AlchemyLanguage
   let(:self_class) { AlchemyLanguage::Concept }
   subject(:concept) { self_class.new("path", "url") }
 
@@ -13,7 +14,7 @@ describe AlchemyLanguage::Concept do
 
   it_should_behave_like "model_accessor"
 
-  describe "#add_method" do
+  describe "#add_response_field" do
     it "concept class has method called status and return result from json_result" do
       is_expected.to respond_to(:status)
     end

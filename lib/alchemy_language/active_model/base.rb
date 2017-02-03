@@ -4,9 +4,9 @@ module AlchemyLanguage
       include AlchemyLanguage::Generators::AlchemyRequest
       attr_accessor :path, :auth_token, :type, :json_result
 
-      add_method(:status)
-      add_method(:usage)
-      add_method(:url)
+      add_response_field(:status)
+      add_response_field(:usage)
+      add_response_field(:url)
 
       def initialize(path, type)
         @path = path

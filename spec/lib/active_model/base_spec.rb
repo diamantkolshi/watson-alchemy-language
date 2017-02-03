@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe AlchemyLanguage::ActiveModel::Base do
+  include AlchemyLanguage
   let(:inherited) { AlchemyLanguage::Author }
   subject(:instance_inherited) { inherited.new("path", "url") }
 
@@ -8,7 +9,7 @@ describe AlchemyLanguage::ActiveModel::Base do
     allow(RestClient).to receive("get").and_return(json_response("author.json"))
   end
 
-  describe "#add_method" do
+  describe "#add_response_field" do
     it "instance_inherited class has method called status and return result from json_result" do
       is_expected.to respond_to(:status)
     end
