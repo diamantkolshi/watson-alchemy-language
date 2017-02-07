@@ -12,29 +12,8 @@ describe AlchemyLanguage::Author do
   it_should_behave_like "model_accessor"
 
   describe "#add_response_field" do
-    it "author class has method called status and return result from json_result" do
-      is_expected.to respond_to(:status)
-    end
 
-    it "status method return hash from json_result['status']" do
-      expect(author.status).to eq("OK")
-    end
-
-    it "author class has method called status and return result from json_result" do
-      is_expected.to respond_to(:usage)
-    end
-
-    it "usage method return hash from json_result['usage']" do
-      expect(author.usage).to eq(author.json_result["usage"])
-    end
-
-    it "author class has method called url and return result from json_result" do
-      is_expected.to respond_to(:url)
-    end
-
-    it "url method return hash from json_result['url']" do
-      expect(author.url).to eq(author.json_result["url"])
-    end
+    it_should_behave_like "same_response_fields", "author"
 
     it "author class has method called authors and return result from json_result" do
       is_expected.to respond_to(:authors)

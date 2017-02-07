@@ -12,29 +12,8 @@ describe AlchemyLanguage::DateExtraction do
   it_should_behave_like "model_accessor"
 
   describe "#add_response_field" do
-    it "date_extraction class has method called status and return result from json_result" do
-      is_expected.to respond_to(:status)
-    end
 
-    it "status method return hash from json_result['status']" do
-      expect(date_extraction.status).to eq("OK")
-    end
-
-    it "date_extraction class has method called status and return result from json_result" do
-      is_expected.to respond_to(:usage)
-    end
-
-    it "usage method return hash from json_result['usage']" do
-      expect(date_extraction.usage).to eq(date_extraction.json_result["usage"])
-    end
-
-    it "date_extraction class has method called url and return result from json_result" do
-      is_expected.to respond_to(:url)
-    end
-
-    it "url method return hash from json_result['url']" do
-      expect(date_extraction.url).to eq(date_extraction.json_result["url"])
-    end
+    it_should_behave_like "same_response_fields", "date_extraction"
 
     it "date_extraction class has method called totalTransactions and return result from json_result" do
       is_expected.to respond_to(:totalTransactions)

@@ -12,29 +12,8 @@ describe AlchemyLanguage::EmotionAnalysis do
   it_should_behave_like "model_accessor"
 
   describe "#add_response_field" do
-    it "emotion_analysis class has method called status and return result from json_result" do
-      is_expected.to respond_to(:status)
-    end
-
-    it "status method return hash from json_result['status']" do
-      expect(emotion_analysis.status).to eq("OK")
-    end
-
-    it "emotion_analysis class has method called status and return result from json_result" do
-      is_expected.to respond_to(:usage)
-    end
-
-    it "usage method return hash from json_result['usage']" do
-      expect(emotion_analysis.usage).to eq(emotion_analysis.json_result["usage"])
-    end
-
-    it "emotion_analysis class has method called url and return result from json_result" do
-      is_expected.to respond_to(:url)
-    end
-
-    it "url method return hash from json_result['url']" do
-      expect(emotion_analysis.url).to eq(emotion_analysis.json_result["url"])
-    end
+    
+    it_should_behave_like "same_response_fields", "emotion_analysis"
 
     it "emotion_analysis class has method called totalTransactions and return result from json_result" do
       is_expected.to respond_to(:totalTransactions)
