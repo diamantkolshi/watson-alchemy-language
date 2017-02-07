@@ -1,4 +1,4 @@
-
+require 'active_support/core_ext/string'
 module AlchemyLanguage
   module ActiveMethod
     class Base
@@ -8,7 +8,7 @@ module AlchemyLanguage
       class << self
         def define_model(name)
           define_method(name) do
-            eval("#{name.capitalize}").new(@path, @type)
+            eval("#{name.to_s.classify}").new(@path, @type)
           end
         end
 
