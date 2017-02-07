@@ -6,6 +6,7 @@ module AlchemyLanguage
     define_model :author
     define_model :concept
     define_model :date_extraction
+    define_model :emotion_analysis
 
     def initialize(path)
       is_url?

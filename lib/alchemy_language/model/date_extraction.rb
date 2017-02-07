@@ -5,7 +5,7 @@ module AlchemyLanguage
     add_response_field(:dates)
 
     def end_point
-      "#{@type}/URLGetEmotion?apikey=#{@auth_token}&url=#{@path}&outputMode=json"
+      "#{@type}/URLExtractDates?apikey=#{@auth_token}&url=#{@path}&outputMode=json"
     end
   end
 end
