@@ -1,9 +1,10 @@
 require 'spec_helper'
 require_relative '../../lib/alchemy_language/generator/alchemy_request'
-require_relative '../../lib/alchemy_language/active_method/extra'
+require_relative '../../lib/alchemy_language/active_model/base'
 require_relative '../../lib/alchemy_language/model/author'
 
 describe AlchemyLanguage::Author do
+  include AlchemyLanguage
   let(:self_class) { AlchemyLanguage::Author }
   subject(:author) { self_class.new("path", "url") }
 
@@ -11,23 +12,9 @@ describe AlchemyLanguage::Author do
     allow(RestClient).to receive("get").and_return(json_response("author.json"))
   end
 
-  it "has accessor for path" do
-    is_expected.to respond_to(:path)
-  end
+  it_should_behave_like "model_accessor"
 
-  it "has accessor for auth_token" do
-    is_expected.to respond_to(:auth_token)
-  end
-
-  it "has accessor for type" do
-    is_expected.to respond_to(:type)
-  end
-
-  it "has accessor for json_result" do
-    is_expected.to respond_to(:json_result)
-  end
-
-  describe "#add_method" do
+  describe "#add_response_field" do
     it "author class has method called status and return result from json_result" do
       is_expected.to respond_to(:status)
     end

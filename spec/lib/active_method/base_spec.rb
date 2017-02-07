@@ -2,6 +2,7 @@ require 'spec_helper'
 require_relative '../../../lib/alchemy_language/active_method/base'
 
 describe AlchemyLanguage::ActiveMethod::Base do
+  include AlchemyLanguage
   subject(:base) { AlchemyLanguage::ActiveMethod::Base }
   let(:request_key) { "#{AlchemyLanguage.base_url_request}/url/URLGetAuthors?apikey=#{AlchemyLanguage.secret_token}&url=www.ibm.com&outputMode=json" }
 
