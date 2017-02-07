@@ -19,7 +19,8 @@ require_relative "alchemy_language/generator/alchemy_request.rb"
 require_relative "alchemy_language/active_model/base.rb"
 require_relative "alchemy_language/model/author.rb"
 require_relative "alchemy_language/model/concept.rb"
+require_relative "alchemy_language/model/date_extraction.rb"
 require_relative "alchemy_language/url_service.rb"
 
 # obj = AlchemyLanguage::UrlService.new("http://www.ibm.com/watson/")
-# puts obj.author.authors
+# puts obj.author.status
