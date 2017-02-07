@@ -1,5 +1,4 @@
 require 'spec_helper'
-require_relative '../../../lib/alchemy_language/active_method/base'
 
 describe AlchemyLanguage::ActiveMethod::Base do
   include AlchemyLanguage

@@ -1,5 +1,4 @@
 require 'spec_helper'
-require_relative '../../../lib/alchemy_language/active_method/extra'
 
 describe AlchemyLanguage::ActiveMethod::Extra do
   subject(:extra) { AlchemyLanguage::ActiveMethod::Extra }

@@ -1,5 +1,4 @@
 require 'spec_helper'
-require_relative '../../lib/alchemy_language/generator/alchemy_request'
 
 describe AlchemyLanguage::Generators::AlchemyRequest do
   include described_class
