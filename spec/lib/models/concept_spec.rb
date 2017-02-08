@@ -1,7 +1,4 @@
 require 'spec_helper'
-require_relative '../../lib/alchemy_language/generator/alchemy_request'
-require_relative '../../lib/alchemy_language/active_method/extra'
-require_relative '../../lib/alchemy_language/model/concept'
 
 describe AlchemyLanguage::Concept do
   include AlchemyLanguage
@@ -15,29 +12,7 @@ describe AlchemyLanguage::Concept do
   it_should_behave_like "model_accessor"
 
   describe "#add_response_field" do
-    it "concept class has method called status and return result from json_result" do
-      is_expected.to respond_to(:status)
-    end
-
-    it "status method return hash from json_result['status']" do
-      expect(concept.status).to eq("OK")
-    end
-
-    it "concept class has method called status and return result from json_result" do
-      is_expected.to respond_to(:usage)
-    end
-
-    it "usage method return hash from json_result['usage']" do
-      expect(concept.usage).to eq(concept.json_result["usage"])
-    end
-
-    it "concept class has method called url and return result from json_result" do
-      is_expected.to respond_to(:url)
-    end
-
-    it "url method return hash from json_result['url']" do
-      expect(concept.url).to eq(concept.json_result["url"])
-    end
+    it_should_behave_like "same_response_fields", "concept"
 
     it "concept class has method called concepts and return result from json_result" do
       is_expected.to respond_to(:concepts)

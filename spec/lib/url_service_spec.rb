@@ -1,9 +1,4 @@
 require 'spec_helper'
-require_relative '../../lib/alchemy_language/active_method/base'
-require_relative '../../lib/alchemy_language/active_method/extra'
-require_relative '../../lib/alchemy_language/url_service'
-require_relative '../../lib/alchemy_language/generator/alchemy_request'
-require_relative '../../lib/alchemy_language/model/author'
 
 describe AlchemyLanguage::UrlService do
   let(:base) { AlchemyLanguage::ActiveMethod::Base }
