@@ -21,6 +21,7 @@ require_relative "alchemy_language/model/author.rb"
 require_relative "alchemy_language/model/concept.rb"
 require_relative "alchemy_language/model/date_extraction.rb"
 require_relative "alchemy_language/model/emotion_analysis.rb"
+require_relative "alchemy_language/model/targeted_emotion.rb"
 require_relative "alchemy_language/url_service.rb"
 
 # obj = AlchemyLanguage::UrlService.new("http://www.ibm.com/watson/")
