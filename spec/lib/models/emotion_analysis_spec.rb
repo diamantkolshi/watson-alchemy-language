@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe AlchemyLanguage::EmotionAnalysis do
   include AlchemyLanguage
-  let(:self_class) { AlchemyLanguage::EmotionAnalysis }
-  subject(:emotion_analysis) { self_class.new("path", "url") }
+  let(:self_class) { AlchemyLanguage::TargetedEmotion }
+  subject(:targeted_emotion) { self_class.new("path", "url") }
 
   before(:each) do
     allow(RestClient).to receive("get").and_return(json_response("emotion_analysis.json"))
@@ -12,7 +12,7 @@ describe AlchemyLanguage::EmotionAnalysis do
   it_should_behave_like "model_accessor"
 
   describe "#add_response_field" do
-    
+
     it_should_behave_like "same_response_fields", "emotion_analysis"
 
     it "emotion_analysis class has method called totalTransactions and return result from json_result" do
