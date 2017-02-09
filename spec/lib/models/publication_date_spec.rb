@@ -23,7 +23,7 @@ describe AlchemyLanguage::PublicationDate do
       expect(publication_date.totalTransactions).to eq(publication_date.json_result["totalTransactions"])
     end
 
-    it "date_extraction class has method called language and return result from json_result" do
+    it "publication_date class has method called language and return result from json_result" do
       is_expected.to respond_to(:language)
     end
 
