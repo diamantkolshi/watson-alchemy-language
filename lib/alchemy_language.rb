@@ -1,7 +1,7 @@
 require 'rest-client'
 require 'json'
 
-module AlchemyLanguages
+module AlchemyLanguage
   class << self
     def base_url_request
       "https://gateway-a.watsonplatform.net/calls"
@@ -13,16 +13,27 @@ module AlchemyLanguages
   end
 end
 
-require "alchemy_lang-uage/active_method/base.rb"
-require "alchemy_language/active_method/extra.rb"
-require "alchemy_language/generator/alchemy_request.rb"
-require "alchemy_language/active_model/base.rb"
-require "alchemy_language/model/author.rb"
-require "alchemy_language/model/concept.rb"
+
+
+
 require "alchemy_language/model/date_extraction.rb"
-require "alchemy_language/model/emotion_analysis.rb"
-require "alchemy_language/model/targeted_emotion.rb"
-require "alchemy_language/url_service.rb"
+require "alchemy_language/model/emotion_analysis.rb"	
+require "alchemy_language/model/targeted_emotion.rb"		 
+require "alchemy_language/model/entity.rb"
+require "alchemy_language/model/feed_detection.rb"
+require "alchemy_language/model/keyword.rb"
+require "alchemy_language/model/language_detection.rb"
+require "alchemy_language/model/microformat.rb"
+require "alchemy_language/model/publication_date.rb"
+require "alchemy_language/model/relation.rb"
+require "alchemy_language/model/typed_relation.rb"
+require "alchemy_language/model/sentiment_analysis.rb"
+require "alchemy_language/model/targeted_sentiment.rb"
+require "alchemy_language/model/taxonomy.rb"
+require "alchemy_language/model/text.rb"
+require "alchemy_language/model/raw_text.rb"
+require "alchemy_language/model/title_extraction.rb"
+require "alchemy_language/url_service.rb"		  "
 
 # obj = AlchemyLanguage::UrlService.new("http://www.ibm.com/watson/")
 # puts obj.author.status

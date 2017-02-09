@@ -8,6 +8,7 @@ module AlchemyLanguage
     define_model :date_extraction
     define_model :emotion_analysis
     define_model :targeted_emotion
+    define_model :entity
 
     def initialize(path)
       is_url?
