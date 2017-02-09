@@ -13,9 +13,6 @@ module AlchemyLanguage
   end
 end
 
-
-
-
 require "alchemy_language/model/date_extraction.rb"
 require "alchemy_language/model/emotion_analysis.rb"	
 require "alchemy_language/model/targeted_emotion.rb"		 
@@ -33,7 +30,7 @@ require "alchemy_language/model/taxonomy.rb"
 require "alchemy_language/model/text.rb"
 require "alchemy_language/model/raw_text.rb"
 require "alchemy_language/model/title_extraction.rb"
-require "alchemy_language/url_service.rb"		  "
+require "alchemy_language/url_service.rb"
 
 # obj = AlchemyLanguage::UrlService.new("http://www.ibm.com/watson/")
 # puts obj.author.status

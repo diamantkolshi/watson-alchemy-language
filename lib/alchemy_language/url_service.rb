@@ -9,6 +9,7 @@ module AlchemyLanguage
     define_model :emotion_analysis
     define_model :targeted_emotion
     define_model :entity
+    define_model :feed_detaction
 
     def initialize(path)
       is_url?
