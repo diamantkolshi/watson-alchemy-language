@@ -12,6 +12,7 @@ module AlchemyLanguage
     define_model :feed_detaction
     define_model :keyword
     define_model :language_detection
+    define_model :microformat
 
     def initialize(path)
       is_url?
