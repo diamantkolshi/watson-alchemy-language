@@ -13,6 +13,7 @@ module AlchemyLanguage
     define_model :keyword
     define_model :language_detection
     define_model :microformat
+    define_model :publication_date
 
     def initialize(path)
       is_url?
