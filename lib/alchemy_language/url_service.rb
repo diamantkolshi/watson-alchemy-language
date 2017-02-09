@@ -17,6 +17,7 @@ module AlchemyLanguage
     define_model :relation
     define_model :typed_relation
     define_model :sentiment_analysis
+    define_model :targeted_sentiment
 
     def initialize(path)
       is_url?
