@@ -40,26 +40,8 @@ describe AlchemyLanguage::Keyword do
     end
   end
 
-  describe "initialize" do
-    it "path instance variable" do
-      expect(keyword.path).to eq("path")
-    end
+  it_should_behave_like "initialize_model", "keyword"
 
-    it "auth_token instance variable" do
-      expect(keyword.auth_token).to eq(AlchemyLanguage.secret_token)
-    end
-  end
+  it_should_behave_like "operation_methods", "keyword" ,"url/URLGetRankedKeywords"
 
-  describe "#end_point" do
-    let(:complete_path) { "url/URLGetRankedKeywords?apikey=da431323d51965268639e605b3c78169f710b86a&url=path&outputMode=json" }
-    it "get end point with auth_token and path" do
-      expect(keyword.end_point).to eq(complete_path)
-    end
-  end
-
-  describe "#result" do
-    it "return all result after request with keyword url" do
-      expect(keyword.result).to eq(json_response("keyword.json", json_parse: true))
-    end
-  end
 end

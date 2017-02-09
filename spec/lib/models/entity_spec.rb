@@ -24,26 +24,8 @@ describe AlchemyLanguage::Entity do
     end
   end
 
-  describe "initialize" do
-    it "path instance variable" do
-      expect(entity.path).to eq("path")
-    end
+  it_should_behave_like "initialize_model", "entity"
 
-    it "auth_token instance variable" do
-      expect(entity.auth_token).to eq(AlchemyLanguage.secret_token)
-    end
-  end
+  it_should_behave_like "operation_methods", "entity" ,"url/URLGetRankedNamedEntities"
 
-  describe "#end_point" do
-    let(:complete_path) { "url/URLGetRankedNamedEntities?apikey=#{entity.auth_token}&url=#{entity.path}&outputMode=json" }
-    it "get end point with auth_token and path" do
-      expect(entity.end_point).to eq(complete_path)
-    end
-  end
-
-  describe "#result" do
-    it "return all result after request with entity url" do
-      expect(entity.result).to eq(json_response("entity.json", json_parse: true))
-    end
-  end
 end

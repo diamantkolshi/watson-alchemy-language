@@ -40,26 +40,8 @@ describe AlchemyLanguage::TargetedSentiment do
     end
   end
 
-  describe "initialize" do
-    it "path instance variable" do
-      expect(targeted_sentiment.path).to eq("path")
-    end
+  it_should_behave_like "initialize_model", "targeted_sentiment"
 
-    it "auth_token instance variable" do
-      expect(targeted_sentiment.auth_token).to eq(AlchemyLanguage.secret_token)
-    end
-  end
+  it_should_behave_like "operation_methods", "targeted_sentiment" ,"url/URLGetTargetedSentiment"
 
-  describe "#end_point" do
-    let(:complete_path) { "url/URLGetTargetedSentiment?apikey=da431323d51965268639e605b3c78169f710b86a&url=path&outputMode=json" }
-    it "get end point with auth_token and path" do
-      expect(targeted_sentiment.end_point).to eq(complete_path)
-    end
-  end
-
-  describe "#result" do
-    it "return all result after request with targeted_sentiment url" do
-      expect(targeted_sentiment.result).to eq(json_response("targeted_sentiment.json", json_parse: true))
-    end
-  end
 end

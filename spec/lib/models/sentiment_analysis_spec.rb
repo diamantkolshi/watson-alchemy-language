@@ -40,26 +40,8 @@ describe AlchemyLanguage::SentimentAnalysis do
     end
   end
 
-  describe "initialize" do
-    it "path instance variable" do
-      expect(sentiment_analysis.path).to eq("path")
-    end
+  it_should_behave_like "initialize_model", "sentiment_analysis"
 
-    it "auth_token instance variable" do
-      expect(sentiment_analysis.auth_token).to eq(AlchemyLanguage.secret_token)
-    end
-  end
+  it_should_behave_like "operation_methods", "sentiment_analysis" ,"url/URLGetTextSentiment"
 
-  describe "#end_point" do
-    let(:complete_path) { "url/URLGetTextSentiment?apikey=da431323d51965268639e605b3c78169f710b86a&url=path&outputMode=json" }
-    it "get end point with auth_token and path" do
-      expect(sentiment_analysis.end_point).to eq(complete_path)
-    end
-  end
-
-  describe "#result" do
-    it "return all result after request with sentiment_analysis url" do
-      expect(sentiment_analysis.result).to eq(json_response("sentiment_analysis.json", json_parse: true))
-    end
-  end
 end

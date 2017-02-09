@@ -40,26 +40,8 @@ describe AlchemyLanguage::TypedRelation do
     end
   end
 
-  describe "initialize" do
-    it "path instance variable" do
-      expect(typed_relation.path).to eq("path")
-    end
+  it_should_behave_like "initialize_model", "typed_relation"
 
-    it "auth_token instance variable" do
-      expect(typed_relation.auth_token).to eq(AlchemyLanguage.secret_token)
-    end
-  end
+  it_should_behave_like "operation_methods", "typed_relation" ,"url/URLGetTypedRelations"
 
-  describe "#end_point" do
-    let(:complete_path) { "url/URLGetTypedRelations?apikey=da431323d51965268639e605b3c78169f710b86a&url=path&outputMode=json" }
-    it "get end point with auth_token and path" do
-      expect(typed_relation.end_point).to eq(complete_path)
-    end
-  end
-
-  describe "#result" do
-    it "return all result after request with typed_relation url" do
-      expect(typed_relation.result).to eq(json_response("typed_relation.json", json_parse: true))
-    end
-  end
 end

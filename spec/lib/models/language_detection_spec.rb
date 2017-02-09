@@ -72,26 +72,8 @@ describe AlchemyLanguage::LanguageDetection do
     end
   end
 
-  describe "initialize" do
-    it "path instance variable" do
-      expect(language_detection.path).to eq("path")
-    end
+  it_should_behave_like "initialize_model", "language_detection"
 
-    it "auth_token instance variable" do
-      expect(language_detection.auth_token).to eq(AlchemyLanguage.secret_token)
-    end
-  end
+  it_should_behave_like "operation_methods", "language_detection" ,"url/URLGetLanguage"
 
-  describe "#end_point" do
-    let(:complete_path) { "url/URLGetLanguage?apikey=da431323d51965268639e605b3c78169f710b86a&url=path&outputMode=json" }
-    it "get end point with auth_token and path" do
-      expect(language_detection.end_point).to eq(complete_path)
-    end
-  end
-
-  describe "#result" do
-    it "return all result after request with language_detection url" do
-      expect(language_detection.result).to eq(json_response("language_detection.json", json_parse: true))
-    end
-  end
 end

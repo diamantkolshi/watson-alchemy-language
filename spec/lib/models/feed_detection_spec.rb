@@ -24,26 +24,8 @@ describe AlchemyLanguage::FeedDetection do
     end
   end
 
-  describe "initialize" do
-    it "path instance variable" do
-      expect(feed_detection.path).to eq("path")
-    end
+  it_should_behave_like "initialize_model", "feed_detection"
 
-    it "auth_token instance variable" do
-      expect(feed_detection.auth_token).to eq(AlchemyLanguage.secret_token)
-    end
-  end
+  it_should_behave_like "operation_methods", "feed_detection" ,"url/URLGetFeedLinks"
 
-  describe "#end_point" do
-    let(:complete_path) { "url/URLGetFeedLinks?apikey=#{feed_detection.auth_token}&url=#{feed_detection.path}&outputMode=json" }
-    it "get end point with auth_token and path" do
-      expect(feed_detection.end_point).to eq(complete_path)
-    end
-  end
-
-  describe "#result" do
-    it "return all result after request with feed_detection url" do
-      expect(feed_detection.result).to eq(json_response("feed_detection.json", json_parse: true))
-    end
-  end
 end

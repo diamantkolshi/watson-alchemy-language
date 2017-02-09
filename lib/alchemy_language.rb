@@ -59,5 +59,5 @@ require_relative "alchemy_language/model/title_extraction.rb"
 require_relative "alchemy_language/url_service.rb"
 >>>>>>> add typed_relation model
 
-# obj = AlchemyLanguage::UrlService.new("http://www.ibm.com/watson/")
+obj = AlchemyLanguage::UrlService.new("http://www.ibm.com/watson/")
 # puts obj.author.status

@@ -32,26 +32,8 @@ describe AlchemyLanguage::Text do
     end
   end
 
-  describe "initialize" do
-    it "path instance variable" do
-      expect(text.path).to eq("path")
-    end
+  it_should_behave_like "initialize_model", "text"
 
-    it "auth_token instance variable" do
-      expect(text.auth_token).to eq(AlchemyLanguage.secret_token)
-    end
-  end
+  it_should_behave_like "operation_methods", "text" ,"url/URLGetText"
 
-  describe "#end_point" do
-    let(:complete_path) { "url/URLGetText?apikey=da431323d51965268639e605b3c78169f710b86a&url=path&outputMode=json" }
-    it "get end point with auth_token and path" do
-      expect(text.end_point).to eq(complete_path)
-    end
-  end
-
-  describe "#result" do
-    it "return all result after request with text url" do
-      expect(text.result).to eq(json_response("text.json", json_parse: true))
-    end
-  end
 end
