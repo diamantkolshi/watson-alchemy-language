@@ -53,6 +53,7 @@ require_relative "alchemy_language/model/typed_relation.rb"
 require_relative "alchemy_language/model/sentiment_analysis.rb"
 require_relative "alchemy_language/model/targeted_sentiment.rb"
 require_relative "alchemy_language/model/taxonomy.rb"
+require_relative "alchemy_language/model/text.rb"
 require_relative "alchemy_language/url_service.rb"
 >>>>>>> add typed_relation model
 

@@ -19,6 +19,7 @@ module AlchemyLanguage
     define_model :sentiment_analysis
     define_model :targeted_sentiment
     define_model :taxonomy
+    define_model :text
 
     def initialize(path)
       is_url?
