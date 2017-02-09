@@ -8,7 +8,7 @@ module AlchemyLanguage
     add_response_field(:native_speakers)
     add_response_field(:wikipedia)
 
-    def end_point
+    def endpoint
       "#{@type}/URLGetLanguage?apikey=#{@auth_token}&url=#{@path}&outputMode=json"
     end
   end

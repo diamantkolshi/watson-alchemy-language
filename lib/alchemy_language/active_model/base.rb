@@ -16,7 +16,7 @@ module AlchemyLanguage
       end
 
       def request
-        json_parser(end_point)
+        json_parser(endpoint)
       end
     end
   end

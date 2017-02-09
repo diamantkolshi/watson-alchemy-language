@@ -4,7 +4,7 @@ module AlchemyLanguage
     add_response_field(:language)
     add_response_field(:results)
 
-    def end_point
+    def endpoint
       "#{@type}/URLGetTargetedEmotion?apikey=#{@auth_token}&url=#{@path}&outputMode=json"
     end
   end

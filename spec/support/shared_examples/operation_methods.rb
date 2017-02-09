@@ -1,10 +1,10 @@
 RSpec.shared_examples "operation_methods" do |model_name, prefix|
-  describe "#end_point" do
+  describe "#endpoint" do
     let(:instance_model) { eval("#{model_name}") }
     let(:complete_path) { "#{prefix}?apikey=#{instance_model.auth_token}&url=#{instance_model.path}&outputMode=json" }
 
     it "get end point with auth_token and path" do
-      expect(eval("#{model_name}").end_point).to eq(complete_path)
+      expect(eval("#{model_name}").endpoint).to eq(complete_path)
     end
   end
 
