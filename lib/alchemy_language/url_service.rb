@@ -10,6 +10,8 @@ module AlchemyLanguage
     define_model :targeted_emotion
     define_model :entity
     define_model :feed_detaction
+    define_model :keyword
+    define_model :language_detection
 
     def initialize(path)
       is_url?

@@ -13,6 +13,7 @@ module AlchemyLanguage
   end
 end
 
+
 require "alchemy_language/model/date_extraction.rb"
 require "alchemy_language/model/emotion_analysis.rb"	
 require "alchemy_language/model/targeted_emotion.rb"		 
