@@ -48,7 +48,7 @@ Then run `bundle install`
 
   ```ruby
   url = 'https://www.ibm.com/us-en/'
-  alchemy_object = AlchemyLanguage::UrlService.new("http://www.ibm.com/watson/")
+  alchemy_object = AlchemyLanguage::UrlService.new(url)
   ```
 #### Authors
 
