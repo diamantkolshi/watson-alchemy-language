@@ -24,26 +24,7 @@ describe AlchemyLanguage::Author do
     end
   end
 
-  describe "initialize" do
-    it "path instance variable" do
-      expect(author.path).to eq("path")
-    end
+  it_should_behave_like "initialize_model", "author"
 
-    it "auth_token instance variable" do
-      expect(author.auth_token).to eq(AlchemyLanguage.secret_token)
-    end
-  end
-
-  describe "#end_point" do
-    let(:complete_path) { "url/URLGetAuthors?apikey=#{author.auth_token}&url=#{author.path}&outputMode=json" }
-    it "get end point with auth_token and path" do
-      expect(author.end_point).to eq(complete_path)
-    end
-  end
-
-  describe "#result" do
-    it "return all result after request with author url" do
-      expect(author.result).to eq(json_response("author.json", json_parse: true))
-    end
-  end
+  it_should_behave_like "operation_methods", "author" ,"url/URLGetAuthors" 
 end
