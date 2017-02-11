@@ -38,9 +38,9 @@ Then run `bundle install`
 ### Service
   Alchemy Language provide three kind of service
   
-  Url service
-  Text service
-  HTML service
+  * Url service
+  * Text service
+  * HTML service
 
 #### Url service 
   
