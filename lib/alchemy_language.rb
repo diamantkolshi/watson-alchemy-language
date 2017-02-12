@@ -1,5 +1,6 @@
 require 'rest-client'
 require 'json'
+require "addressable/uri"
 
 module AlchemyLanguage
   class << self
@@ -37,6 +38,15 @@ require_relative  "alchemy_language/model/text.rb"
 require_relative  "alchemy_language/model/raw_text.rb"
 require_relative  "alchemy_language/model/title_extraction.rb"
 require_relative  "alchemy_language/url_service.rb"
+require_relative  "alchemy_language/text_service.rb"
 
-# obj = AlchemyLanguage::UrlService.new("http://www.ibm.com/watson/")
+# text = "http://www.cnn.com"
+# obj = AlchemyLanguage::UrlService.new(text)
+# puts obj.targeted_emotion(targets: "apples|bananas").result
 # puts obj.author.status
+
+
+
+
+
+

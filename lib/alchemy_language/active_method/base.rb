@@ -7,8 +7,8 @@ module AlchemyLanguage
 
       class << self
         def define_model(name)
-          define_method(name) do
-            eval("#{name.to_s.classify}").new(@path, @type)
+          define_method(name) do |options = {}|
+            eval("#{name.to_s.classify}").new(@path, @type, options)
           end
         end
 
