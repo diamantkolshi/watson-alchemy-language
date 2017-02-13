@@ -5,7 +5,11 @@ module AlchemyLanguage
     add_response_field(:results)
 
     def endpoint
-      "#{@type}/#{@prefix}GetTargetedEmotion?apikey=#{@auth_token}&#{@type}=#{@path}&outputMode=json&#{params_addressable}"
+      url = "#{@type}/#{@prefix}GetTargetedEmotion"
+      url << "?apikey=#{@auth_token}"
+      url << "&#{@type}=#{@path}&outputMode=json"
+      url << "&#{params_addressable}" unless params_addressable.empty?
+      url
     end
   end
 end

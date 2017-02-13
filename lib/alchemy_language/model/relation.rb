@@ -4,7 +4,11 @@ module AlchemyLanguage
     add_response_field(:relations)
 
     def endpoint
-      "#{@type}/URLGetRelations?apikey=#{@auth_token}&url=#{@path}&outputMode=json"
+      url = "#{@type}/#{@prefix}GetRelations"
+      url << "?apikey=#{@auth_token}"
+      url << "&#{@type}=#{@path}&outputMode=json"
+      url << "&#{params_addressable}" unless params_addressable.empty?
+      url
     end
   end
 end

@@ -5,7 +5,11 @@ module AlchemyLanguage
     add_response_field(:taxonomy)
 
     def endpoint
-      "#{@type}/URLGetRankedTaxonomy?apikey=#{@auth_token}&url=#{@path}&outputMode=json"
+      url = "#{@type}/#{@prefix}GetRankedTaxonomy"
+      url << "?apikey=#{@auth_token}"
+      url << "&#{@type}=#{@path}&outputMode=json"
+      url << "&#{params_addressable}" unless params_addressable.empty?
+      url
     end
   end
 end

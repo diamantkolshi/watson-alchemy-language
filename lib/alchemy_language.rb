@@ -9,7 +9,7 @@ module AlchemyLanguage
     end
 
     def secret_token
-      "da431323d51965268639e605b3c78169f710b86a"
+      ENV['token']
     end
   end
 end
@@ -21,9 +21,9 @@ require_relative  "alchemy_language/active_model/base.rb"
 require_relative  "alchemy_language/model/author.rb"
 require_relative  "alchemy_language/model/concept.rb"
 require_relative  "alchemy_language/model/date_extraction.rb"
-require_relative  "alchemy_language/model/emotion_analysis.rb"	
-require_relative  "alchemy_language/model/targeted_emotion.rb"		 
-require_relative 	"alchemy_language/model/entity.rb"
+require_relative  "alchemy_language/model/emotion_analysis.rb"
+require_relative  "alchemy_language/model/targeted_emotion.rb"
+require_relative  "alchemy_language/model/entity.rb"
 require_relative  "alchemy_language/model/feed_detection.rb"
 require_relative  "alchemy_language/model/keyword.rb"
 require_relative  "alchemy_language/model/language_detection.rb"
@@ -39,12 +39,3 @@ require_relative  "alchemy_language/model/raw_text.rb"
 require_relative  "alchemy_language/model/title_extraction.rb"
 require_relative  "alchemy_language/url_service.rb"
 require_relative  "alchemy_language/text_service.rb"
-
-# text = "http://www.cnn.com"
-# obj = AlchemyLanguage::UrlService.new(text)
-# puts obj.targeted_emotion(targets: "apples|bananas").result
-# puts obj.author.status
-
-
-
-

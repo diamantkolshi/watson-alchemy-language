@@ -9,7 +9,11 @@ module AlchemyLanguage
     add_response_field(:wikipedia)
 
     def endpoint
-      "#{@type}/URLGetLanguage?apikey=#{@auth_token}&url=#{@path}&outputMode=json"
+      url = "#{@type}/#{@prefix}GetLanguage"
+      url << "?apikey=#{@auth_token}"
+      url << "&#{@type}=#{@path}&outputMode=json"
+      url << "&#{params_addressable}" unless params_addressable.empty?
+      url
     end
   end
 end

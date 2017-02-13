@@ -5,7 +5,11 @@ module AlchemyLanguage
     add_response_field(:keywords)
 
     def endpoint
-      "#{@type}/URLGetRankedKeywords?apikey=#{@auth_token}&url=#{@path}&outputMode=json"
+      url = "#{@type}/#{@prefix}GetRankedKeywords"
+      url << "?apikey=#{@auth_token}"
+      url << "&#{@type}=#{@path}&outputMode=json"
+      url << "&#{params_addressable}" unless params_addressable.empty?
+      url
     end
   end
 end

@@ -3,7 +3,11 @@ module AlchemyLanguage
     add_response_field(:title)
 
     def endpoint
-      "#{@type}/URLGetTitle?apikey=#{@auth_token}&url=#{@path}&outputMode=json"
+      url = "#{@type}/#{@prefix}GetTitle"
+      url << "?apikey=#{@auth_token}"
+      url << "&#{@type}=#{@path}&outputMode=json"
+      url << "&#{params_addressable}" unless params_addressable.empty?
+      url
     end
   end
 end

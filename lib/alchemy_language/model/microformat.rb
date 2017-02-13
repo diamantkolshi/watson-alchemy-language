@@ -3,7 +3,11 @@ module AlchemyLanguage
     add_response_field(:microformats)
 
     def endpoint
-      "#{@type}/URLGetMicroformatData?apikey=#{@auth_token}&url=#{@path}&outputMode=json"
+      url = "#{@type}/#{@prefix}GetMicroformatData"
+      url << "?apikey=#{@auth_token}"
+      url << "&#{@type}=#{@path}&outputMode=json"
+      url << "&#{params_addressable}" unless params_addressable.empty?
+      url
     end
   end
 end
