@@ -48,5 +48,3 @@ require_relative  "alchemy_language/text_service.rb"
 
 
 
-
-

@@ -29,7 +29,6 @@ module AlchemyLanguage
 
       def check_prefix
         @type == "text" ? @prefix = @type.capitalize : @prefix = @type.upcase
-        require 'pry';binding.pry
       end
     end
   end
