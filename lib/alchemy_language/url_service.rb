@@ -22,6 +22,7 @@ module AlchemyLanguage
     define_model :text
     define_model :raw_text
     define_model :title_extraction
+    define_model :combined_call
 
     def initialize(path)
       is_url?
