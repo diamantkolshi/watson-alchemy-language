@@ -40,3 +40,4 @@ require_relative  "alchemy_language/model/title_extraction.rb"
 require_relative  "alchemy_language/model/combined_call.rb"
 require_relative  "alchemy_language/url_service.rb"
 require_relative  "alchemy_language/text_service.rb"
+
