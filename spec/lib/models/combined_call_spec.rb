@@ -33,4 +33,27 @@ describe AlchemyLanguage::CombinedCall do
   it_should_behave_like "initialize_model", "combined_call"
 
   it_should_behave_like "operation_methods", "combined_call" ,"url/URLGetCombinedData"
+
+  describe "#check_options" do
+    it "when options is empty check_options does nothing" do
+      expect(combined_call.check_options).to eq(nil)
+    end
+
+    it "when option is not empty" do
+      combined_call.instance_variable_set(:@options, { extract: "keywords,entitetis" })
+      expect(combined_call.check_options).to eq(["keywords","entitetis"])
+    end
+  end
+
+  describe "#add_dynamic_response_field" do
+    it "when options is not empty subject has each options like method" do
+      is_expected.to respond_to(:keywords)
+      is_expected.to respond_to(:entitetis)
+    end
+    it "when options is emoty subject has not options method" do
+      combined_call.instance_variable_set(:@options, nil)
+      is_expected.to respond_to(:keywords)
+      is_expected.to respond_to(:entitetis)
+    end
+  end
 end
