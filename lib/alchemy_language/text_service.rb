@@ -1,5 +1,5 @@
 module AlchemyLanguage
-  class UrlService < ActiveMethod::Base
+  class TextService < ActiveMethod::Base
     attr_accessor :path, :type
     before_request :authenticate!
 
@@ -24,18 +24,9 @@ module AlchemyLanguage
     define_model :title_extraction
     define_model :combined_call
 
-    def initialize(path)
-      is_url?
-      @path = path
-      @type = "url"
-    end
-
-    def is_url?
-      "params is not url" if check_url.nil?
-    end
-
-    def check_url
-      @path =~ URI::regexp(["ftp", "http", "https"])
+    def initialize(text)
+      @path = text
+      @type = "text"
     end
   end
 end
