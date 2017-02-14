@@ -83,27 +83,31 @@ Then run `bundle install`
   
   All Services contain these models:
 
-  ├── Author
-  ├── Concept
-  ├── DateExtraxtion
-  ├── EmotionAnalysis
-  ├── TargetedEmotion
-  ├── Entity
-  ├── FeedDetection
-  ├── Keyword
-  ├── LanguageDetection
-  ├── Microformat
-  ├── PublicationDate
-  ├── Relation
-  ├── TypedRelation
-  ├── SentimentAnalysis
-  ├── TargetedSentiment
-  ├── Taxonomy
-  ├── Text
-  ├── RawText
-  ├── TitleExtraction
-  ├── CombinedCall
-
+  ```
+    .
+    ├── Author
+    ├── Concept
+    ├── DateExtraxtion
+    ├── EmotionAnalysis
+    ├── TargetedEmotion
+    ├── Entity
+    ├── FeedDetection
+    ├── Keyword
+    ├── LanguageDetection
+    ├── Microformat
+    ├── PublicationDate
+    ├── Relation
+    ├── TypedRelation
+    ├── SentimentAnalysis
+    ├── TargetedSentiment
+    ├── Taxonomy
+    ├── Text
+    ├── RawText
+    ├── TitleExtraction
+    ├── CombinedCall
+  
+    20 models
+  ```
 
 #### Authors
 
