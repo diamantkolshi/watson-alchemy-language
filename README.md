@@ -79,7 +79,7 @@ Then run `bundle install`
     @alchemy_service = AlchemyLanguage::HtmlService.new(text)
   ```
 
-### ALl services 
+### Models 
   
   All Services contain these models:
 
