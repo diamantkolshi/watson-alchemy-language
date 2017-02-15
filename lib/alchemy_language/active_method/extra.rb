@@ -7,7 +7,7 @@ module AlchemyLanguage
           @json_result[name.to_s]
         end
       end
-      
+
       def result
         @json_result
       end
