@@ -17,6 +17,8 @@ module AlchemyLanguage
         @json_result = request
       end
 
+      add_response_field(:url)
+
       def request
         json_parser(endpoint)
       end

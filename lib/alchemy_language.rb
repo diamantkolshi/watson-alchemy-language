@@ -9,7 +9,8 @@ module AlchemyLanguage
     end
 
     def secret_token
-      ENV['token']
+      # ENV['token']
+      "da431323d51965268639e605b3c78169f710b86a"
     end
   end
 end
@@ -41,3 +42,5 @@ require_relative  "alchemy_language/model/combined_call.rb"
 require_relative  "alchemy_language/url_service.rb"
 require_relative  "alchemy_language/text_service.rb"
 
+# obj = AlchemyLanguage::UrlService.new("https://www.ibm.com/us-en/")
+# puts obj.combined_call(extract: "entities,keywords").result["entities"]
