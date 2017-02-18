@@ -38,6 +38,7 @@ require 'alchemy_language'
 AlchemyLanguage works with Rails > 4.1 onwards. You can add it to your Gemfile with:
 
 ```ruby
+gem 'rest-client'
 gem 'alchemy_language', '>= 1.0.3'
 ```
 
